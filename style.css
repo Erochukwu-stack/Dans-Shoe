@@ -1,0 +1,242 @@
+:root {
+    --black: #121210;
+    --white: #fafaf9;
+    --ash: #a6a69d;
+    --ash-light: #e7e5de;
+    --ash-dark: #38372f;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+}
+.navbar{
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    max-width: 900px;
+    margin: 0 auto 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: rgba(250, 250, 249, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(18, 18, 16, 0.1);
+    border-radius: 999px;
+    transition: padding 0.2s ease, background 0.2s ease;
+}
+.navbar .logo{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+.navbar nav ul{
+    display: flex;
+    gap: 28px;
+}
+.navbar nav a{
+    font-size: 1rem;
+    font-weight: 500; 
+    position: relative;
+    padding-bottom: 2px;
+}
+.navbar nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--black);
+    transition: width 0.25s ease;
+}
+.navbar nav a:hover::after{
+    width: 100%;
+}
+.hero{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 32px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+.hero-text h1{
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    margin-bottom: 16px;
+}
+.hero-text .tagline{
+    font-size:1.15rem;
+    color: var(--ash-dark);
+    margin-bottom: 32px;
+    max-width: 32ch;
+}
+.hero-image{
+    background: var(--ash-light);
+    padding: 24px;
+    border-radius: 16px;
+}
+.hero-image img{
+    border-radius: 32px;
+}
+.btn-primary{
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.btn-primary:hover{
+    opacity: 0.85;
+}
+.details{
+    background: var(--black);
+    color: var(--white);
+    padding: 90px 32px;
+}
+.details h2{
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 auto 48px;
+    max-width: 1100px;
+}
+.feature-grid{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.feature{
+    border-top: 1px solid rgba(250, 250, 249, 0.2);
+    padding-top: 24px;
+}
+.feature h3{
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.feature p{
+    color: var(--ash);
+    font-size: 0.95rem;
+}
+.buy{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 100px 32px;
+    text-align: left;
+}
+.buy h2{
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 8px;
+}
+.price-tag{
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+}
+.price-tag span{
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ash-dark);
+    font-weight: 400;
+}
+.calculator {
+    background: var(--ash-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.calculator label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.calculator input {
+    width: 90%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 12px 14px;
+    border: 1px solid var(--ash-dark);
+    border-radius: 8px;
+    background: var(--white);
+    margin-bottom: 20px;
+}
+.calculator input:focus{
+    outline: 2px solid var(--black);
+    outline-offset: 1px;
+}
+#total-price{
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+footer{
+    background: var(--black);
+    color: var(--ash);
+    padding: 32px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+@media (max-width: 720px) {
+    .navbar{
+        top: 10px;
+        padding: 12px 18px;
+    }
+    .navbar nav ul{
+        gap: 16px;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 130px 24px 60px;
+    }
+    .hero-image{
+        order: -1;
+    }
+    .feature-grid{
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .details{
+        padding: 60px 24px;
+    }
+    .buy{
+        padding: 60px 24px;
+    }
+}

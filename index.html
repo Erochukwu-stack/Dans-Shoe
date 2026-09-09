@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <header class="navbar">
+        <div class="logo">DANS</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#buy">Buy Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Hero Section-->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Welcome to Our Product</h1>
+            <p class="tagline">Discover the amazing features of our product. Built to Last!</p>
+            <a href="#buy" class="btn-primary">Buy Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="product-image.jpeg" alt="Product Image">
+        </div>
+        
+    </section>
+
+    <!--Details-->
+    <section class="details" id="details">
+        <h2>Why DANS</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>Grip</h3>
+                <p>Multi-terrain outsole that holds on mud, rock, and wet roots</p>
+            </div>
+            <div class="feature">
+                <h3>Weight</h3>
+                <p>Lightweight design for all-day comfort</p>
+            </div>
+            <div class="feature">
+                <h3>Durability</h3>
+                <p>High-quality materials built to last</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Buy and Price Calculator-->
+    <section class="buy" id="buy">
+        <h2>Get Your Pair</h2>
+        <p class="price-tag">Price: N45,000 <span>per pair</span></p>
+        <div class="calculator">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" placeholder="How many Quantities do you want">
+            <p id="total-price">Total Price: N45,000</p>
+        </div>
+        <button class="btn-primary" id="buy-btn">Add to Cart</button>
+    </section>
+    <!--Footer-->
+    <footer>
+        <p>&copy; 2026 DANS. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
