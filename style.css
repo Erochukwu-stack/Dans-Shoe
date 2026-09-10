@@ -207,6 +207,99 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.3rem;
     font-weight: 600;
 }
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 18, 16, 0.55);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 200;
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: var(--white);
+    border: 1px solid rgba(18, 18, 16, 0.1);
+    border-radius: 20px;
+    padding: 40px 32px;
+    transform: translateY(16px) scale(0.98);
+    transition: transform 0.25s ease;
+    box-shadow: 0 24px 60px rgba(18, 18, 16, 0.25);
+}
+.modal-overlay.active .modal{
+    transform: translateY(0) scale(1);
+}
+.modal-close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ash-dark);
+}
+.modal h2{
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+.modal-subtitle{
+    color: var(--ash-dark);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+.modal form label{
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.modal form input{
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 1px solid var(--ash);
+    border-radius: 8px;
+    margin-bottom: 18px;
+    background: var(--white);
+}
+.modal form input:focus{
+    outline:  2px solid var(--black);
+    outline-offset: 1px;
+}
+.modal-submit{
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+}
+.modal-toggle{
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ash-dark);
+    margin-top: 20px;
+}
+.modal-toggle a{
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.hidden{
+    display: none;
+}
 footer{
     background: var(--black);
     color: var(--ash);
@@ -216,11 +309,11 @@ footer{
 }
 @media (max-width: 720px) {
     .navbar{
-        top: 10px;
-        padding: 12px 18px;
+        top: 12px;
+        padding: 12px 10px;
     }
     .navbar nav ul{
-        gap: 16px;
+        gap: 8px;
     }
     .hero {
         grid-template-columns: 1fr;
