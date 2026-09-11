@@ -1,104 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Product</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!--Navigation Bar-->
-    <header class="navbar">
-        <div class="logo">DANS</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#details">Details</a></li>
-                <li><a href="#buy">Buy Now</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!--Hero Section-->
-    <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>Welcome to Our Product</h1>
-            <p class="tagline">Discover the amazing features of our product. Built to Last!</p>
-            <a href="#buy" class="btn-primary">Buy Now</a>
-        </div>
-        <div class="hero-image">
-            <img src="product-image.jpeg" alt="Product Image">
-        </div>
-        
-    </section>
-
-    <!--Details-->
-    <section class="details" id="details">
-        <h2>Why DANS</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <h3>Grip</h3>
-                <p>Multi-terrain outsole that holds on mud, rock, and wet roots</p>
-            </div>
-            <div class="feature">
-                <h3>Weight</h3>
-                <p>Lightweight design for all-day comfort</p>
-            </div>
-            <div class="feature">
-                <h3>Durability</h3>
-                <p>High-quality materials built to last</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!--Buy and Price Calculator-->
-    <section class="buy" id="buy">
-        <h2>Get Your Pair</h2>
-        <p class="price-tag">Price: N45,000 <span>per pair</span></p>
-        <div class="calculator">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="0" placeholder="How many Quantities do you want">
-            <p id="total-price">Total Price: N45,000</p>
-        </div>
-        <button class="btn-primary" id="buy-btn">Add to Cart</button>
-    </section>
-
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal">
-            <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-
-            <h2 id="modal-title">Sign In</h2>
-            <p class="modal-subtitle" id="modal-subtitle">Sign in to complete your order.</p>
-
-            <form id="auth-form">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Secure your account" required>
-
-                <div id="confirm-password-group" class="hidden">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
-                </div>
-                <button type="submit" class="btn-primary modal-submit" id="modal-submit">Sign In</button>
-            </form>
-            <p class="modal-toggle">
-                <span id="toggle-text">Don't have an account?</span>
-                <a href="#" id="toggle-mode">Sign up instead</a>
-            </p>
-        </div>
+  <!-- ===== NAV ===== -->
+  <header class="navbar">
+    <div class="logo">DANS</div>
+    <div class="nav-right">
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="#buy">Buy</a></li>
+        </ul>
+      </nav>
+      <button class="account-btn" id="account-btn" aria-label="Account">
+        <span id="account-icon">&#9679;</span>
+        <span class="cart-badge hidden" id="cart-badge">0</span>
+      </button>
     </div>
-    <!--Footer-->
-    <footer>
-        <p>&copy; 2026 DANS. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="overview">
+    <div class="hero-text">
+      <h1>Welcome to Our Product</h1>
+      <p class="tagline">Discover the Amazing features of our product. Built to last.</p>
+      <a href="#buy" class="btn-primary">Shop Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="product-image.jpeg" alt="DANS Product Image">
+    </div>
+  </section>
+
+  <!-- ===== DETAILS / FEATURES ===== -->
+  <section class="details" id="details">
+    <h2>Why DANS</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Grip</h3>
+        <p>Multi-terrain outsole that holds on mud, rock, and wet roots.</p>
+      </div>
+      <div class="feature">
+        <h3>Weight</h3>
+        <p>Just 240g per shoe — light enough to forget you're wearing them.</p>
+      </div>
+      <div class="feature">
+        <h3>Durability</h3>
+        <p>Reinforced toe cap built to survive rocky descents.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUY / PRICE CALCULATOR ===== -->
+  <section class="buy" id="buy">
+    <h2>Get Your Pair</h2>
+    <p class="price-tag">Price: ₦45,000 <span>per pair</span></p>
+
+    <div class="calculator">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" value="1" min="1">
+
+      <p id="total-output">Total: ₦45,000</p>
+    </div>
+
+    <button class="btn-primary" id="buy-btn">Add to Cart</button>
+  </section>
+
+  <!-- ===== AUTH MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+      <h2 id="modal-title">Sign In</h2>
+      <p class="modal-subtitle" id="modal-subtitle">Sign in to complete your order.</p>
+
+      <form id="auth-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+
+        <!-- Only shown in "Sign Up" mode -->
+        <div id="confirm-password-group" class="hidden">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="btn-primary modal-submit" id="modal-submit">Sign In</button>
+      </form>
+
+      <p class="modal-toggle">
+        <span id="toggle-text">Don't have an account?</span>
+        <a href="#" id="toggle-mode">Sign up instead</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== PROFILE MODAL ===== -->
+  <div class="modal-overlay" id="profile-overlay">
+    <div class="modal">
+      <button class="modal-close" id="profile-close" aria-label="Close">&times;</button>
+
+      <h2>Your Profile</h2>
+      <p class="modal-subtitle" id="profile-email"></p>
+
+      <h3 class="profile-section-title">Cart</h3>
+      <ul class="cart-list" id="cart-list"></ul>
+      <p class="cart-total" id="cart-total"></p>
+
+      <button class="btn-primary modal-submit" id="signout-btn">Sign Out</button>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2026 DANS. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
